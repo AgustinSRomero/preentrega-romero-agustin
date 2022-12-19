@@ -1,0 +1,11 @@
+/* Mixins */
+@mixin grid-template($columns, $rows, $column-gap, $row-gap){
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}
+
+/* Maps */
+$palette: ("header-footer": #918367, "body": #EFEBE4, "letter-beige": #FFF7E8, "letter-dark-blue": #596f91, "letter-light-blue": #B4C5DE, "button-brown": #918367d2, "dropdown-items": #5d5340);

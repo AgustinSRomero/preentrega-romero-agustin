@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "variables.scss";
+
+/* Estilos generales */
+a{text-decoration: none;}
+ul{list-style-type: none;}
+body{background-color: map-get($map: $palette, $key: "body");}
+
+h1{font-size: 2.5em;}
+h2{font-size: 1.2em;}
+h3{font-size: 1.8em;}
+h4{font-size: 1.6em;}
+h5, li{font-size: 1.4em;}
+label{font-size: 1.3em;}
+h6, button, input{font-size: 1.2em;}
+p{font-size: 1.4em;}
+
+/* transitions logo, nav y subitems */
+header{
+    background-color: map-get($map: $palette, $key: "header-footer");
+    a{transition: 0.3s ease;}
+}
+
+nav{@include grid-template(30% 60% 10%, auto, 3px, 0px)}
+
+.brand a, h5{ /* logo and sublogo */
+    text-align: left;
+    color: map-get($map: $palette, $key: "letter-beige");
+}
+.brand a{ /* logo */
+    letter-spacing: 3px;
+    text-shadow: 0rem 0.125rem 0.188rem #00000054;
+    &:hover{
+        color: map-get($map: $palette, $key: "letter-light-blue");
+        text-shadow: 0.1rem 0.2rem 0.2rem #0f0f0fb4;
+    }
+}
+
+.nav-link{ /* nav links style */
+    color: map-get($map: $palette, $key: "letter-beige");
+    letter-spacing: 1.5px;
+    &:hover{
+        color: map-get($map: $palette, $key: "letter-light-blue");
+    }
+}

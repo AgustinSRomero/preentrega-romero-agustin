@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mixins */
+/* Maps */
+/* Estilos generales */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: #EFEBE4;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 1.6em;
+}
+
+h5, li {
+  font-size: 1.4em;
+}
+
+label {
+  font-size: 1.3em;
+}
+
+h6, button, input {
+  font-size: 1.2em;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+/* transitions logo, nav y subitems */
+header {
+  background-color: #918367;
+}
+header a {
+  transition: 0.3s ease;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  grid-template-rows: auto;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
+  row-gap: 0px;
+}
+
+.brand a, h5 { /* logo and sublogo */
+  text-align: left;
+  color: #FFF7E8;
+}
+
+.brand a { /* logo */
+  letter-spacing: 3px;
+  text-shadow: 0rem 0.125rem 0.188rem rgba(0, 0, 0, 0.3294117647);
+}
+.brand a:hover {
+  color: #B4C5DE;
+  text-shadow: 0.1rem 0.2rem 0.2rem rgba(15, 15, 15, 0.7058823529);
+}
+
+.nav-link { /* nav links style */
+  color: #FFF7E8;
+  letter-spacing: 1.5px;
+}
+.nav-link:hover {
+  color: #B4C5DE;
+}/*# sourceMappingURL=App.css.map */
