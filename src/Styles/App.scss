@@ -26,11 +26,14 @@ header{
     a{transition: 0.3s ease;}
 }
 
-nav{@include grid-template(30% 60% 10%, auto, 3px, 0px)}
+nav{@include grid-template(15% 70% 15%, auto, 3px, 0px)}
 
 .brand a, h5{ /* logo and sublogo */
     text-align: left;
     color: map-get($map: $palette, $key: "letter-beige");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .brand a{ /* logo */
     letter-spacing: 3px;
@@ -40,6 +43,20 @@ nav{@include grid-template(30% 60% 10%, auto, 3px, 0px)}
         text-shadow: 0.1rem 0.2rem 0.2rem #0f0f0fb4;
     }
 }
+.brand h5{margin-bottom: 4px;}
+
+nav .links-container{
+    display: flex;
+    align-items: flex-end;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
 
 .nav-link{ /* nav links style */
     color: map-get($map: $palette, $key: "letter-beige");
@@ -47,4 +64,19 @@ nav{@include grid-template(30% 60% 10%, auto, 3px, 0px)}
     &:hover{
         color: map-get($map: $palette, $key: "letter-light-blue");
     }
+}
+
+.icons-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* item list container style */
+.item-list-container{
+    color: map-get($map: $palette, $key: "letter-dark-blue");
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

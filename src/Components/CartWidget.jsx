@@ -1,8 +1,8 @@
-import cartCream from '../Icons/cartCream.svg'
+import cart from '../Icons/cart.svg'
 
 function CartWidget(){
     return(
-        <img src={cartCream} alt="Carrito de Compras" />
+        <img src={cart} alt="Carrito de Compras" />
     )
 }
 

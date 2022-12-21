@@ -11,27 +11,27 @@ function NavBar (){
                 <h5>Mercería</h5>
             </div>
 
-            <div>
+            <div className='links-container'>
                 <ul>
                     <li>
-                        <a href="" className='nav-link'>Catálogo</a>
+                        <a href="" className='nav-link'>Agujas</a>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Ofertas</a>
+                        <a href="" className='nav-link'>Hilos</a>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Ojal y Botón</a>
+                        <a href="" className='nav-link'>Elástico</a>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Nosotros</a>
+                        <a href="" className='nav-link'>Cierres</a>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Contacto</a>
+                        <a href="" className='nav-link'>Cintas</a>
                     </li>
                 </ul>
             </div>
 
-            <div>
+            <div className='icons-position'>
                 <CartWidget/>
             </div>
         </nav>
