@@ -1,4 +1,4 @@
-import cart from '../Icons/cart.svg'
+import cart from '../../Icons/cart.svg'
 
 function CartWidget(){
     return(

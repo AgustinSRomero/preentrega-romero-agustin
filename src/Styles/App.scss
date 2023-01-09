@@ -21,12 +21,11 @@ h6, button, input{font-size: 1.2em;}
 p{font-size: 1.4em;}
 
 /* transitions logo, nav y subitems */
-header{
+nav{
     background-color: map-get($map: $palette, $key: "header-footer");
     a{transition: 0.3s ease;}
+    @include grid-template(15% 70% 15%, auto, 0px, 0px)
 }
-
-nav{@include grid-template(15% 70% 15%, auto, 3px, 0px)}
 
 .brand a, h5{ /* logo and sublogo */
     text-align: left;
@@ -72,11 +71,144 @@ nav .links-container{
     align-items: center;
 }
 
-/* item list container style */
+/* General grid pages*/
+.main-container{
+    @include grid-template(5% 90% 5%, auto, 0px, 0px);
+    justify-content: center;
+    justify-items: center;
+    align-items: center; 
+    margin: 2rem 0rem;
+}
+
+/* item list container grid and style */
 .item-list-container{
     color: map-get($map: $palette, $key: "letter-dark-blue");
+    grid-area: products;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 0.8fr);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+#ItemListContainer{
+    grid-template-areas: ". products .";
+}
+
+/* Cards Styles */
+.card-item{
+    text-align: center;
+    padding: 30px;
+    border: solid 0.07rem #918367;
+    border-radius: 5%;
+    box-shadow: 1px 1px 3px #0000006e;
+    margin: auto;
+    transition: 0.3s;
+
+    &:hover{
+        box-shadow: 1.5px 1.5px 3px #000000b1;
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+}
+
+/* item count styles and grid */
+.item-count-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 3px 5px;
+    height: 80%;
+
+    button{cursor: pointer;}
+}
+
+.count-buttons{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid map-get($map: $palette, $key: "letter-dark-blue");
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.342);
+    grid-area: counterBtn;
     
+    button{
+        background-color: transparent;
+        color: map-get($map: $palette, $key: "letter-dark-blue");
+        border: none;
+        border-radius: 3px;
+        padding: 4px;
+
+        &:hover{background-color: map-get($map: $palette, $key: "letter-light-blue");}
+    }
+
+    .button-add{
+        border-left: 2px solid map-get($map: $palette, $key: "letter-dark-blue");
+        &:disabled{background-color: rgba(0, 0, 0, 0.08); color: rgba(0, 0, 0, 0.3);}
+    }
+    .button-substract{
+        border-right: 2px solid map-get($map: $palette, $key: "letter-dark-blue"); 
+        padding-left: 6px;
+        &:disabled{background-color: rgba(0, 0, 0, 0.08); color: rgba(0, 0, 0, 0.3);}
+    }
+}
+
+.add-cart-button button, .detail-button{
+    background-color: map-get($map: $palette, $key: "button-brown");
+    border: 1.5px solid map-get($map: $palette, $key: "header-footer");
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+    color: map-get($map: $palette, $key: "letter-beige");
+    font-size: 1rem;
+    padding: 5px 6px;
+    margin: 3px;
+    cursor: pointer;
+    
+    &:hover{
+        background-color: map-get($map: $palette, $key: "letter-light-blue");
+        border-color: map-get($map: $palette, $key: "letter-dark-blue");
+        color: map-get($map: $palette, $key: "letter-dark-blue");
+    }
+}
+
+/* Item detail container grid and style */
+.item-detail-card{
+    grid-area: product;
+    width: 60%;
+    @include grid-template(0.8fr 0.8fr, auto, 20px, auto);
+    justify-items: space-around;
+}
+/* imagen */
+.detail-img{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* texto */
+.detail-text{
+    color: map-get($map: $palette, $key: "letter-dark-blue");
+    @include grid-template(auto, repeat(4, 1fr), auto, 1rem);
+    margin: 1rem; 
+}
+/* botones y contador */
+.add-cart-button{grid-area: add-cart;}
+
+#ItemDetail .item-count-container{
+    width: 100%;
+    grid-area: buttons;
+    @include grid-template(0.2fr 1fr 0.2fr 0.3fr 1fr 0.5fr 0.3fr, auto, 0px, 0px);
+    grid-template-areas: ". counterBtn counterBtn . add-cart add-cart .";
+
+    .count-buttons{width: 100%;}
+    .add-cart-button button{padding: 0.7rem;}
+
+}
+
+/* Area general */
+#ItemDetailContainer{
+    grid-template-areas: ". product .";
+}
+

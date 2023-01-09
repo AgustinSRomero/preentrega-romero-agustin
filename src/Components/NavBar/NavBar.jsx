@@ -1,12 +1,13 @@
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 function NavBar (){
     return (
         <nav>
             <div className='brand'>
                 <h1>
-                    <a href="">Elisa
-                    </a>
+                    <Link to="/">Elisa
+                    </Link>
                 </h1>
                 <h5>Mercería</h5>
             </div>
@@ -14,19 +15,19 @@ function NavBar (){
             <div className='links-container'>
                 <ul>
                     <li>
-                        <a href="" className='nav-link'>Agujas</a>
+                        <Link to="/category/agujas" className='nav-link'>Agujas</Link>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Hilos</a>
+                        <Link to="/category/hilos" className='nav-link'>Hilos</Link>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Elástico</a>
+                        <Link to="/category/puntilla" className='nav-link'>Puntilla</Link>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Cierres</a>
+                        <Link to="/category/cierres" className='nav-link'>Cierres</Link>
                     </li>
                     <li>
-                        <a href="" className='nav-link'>Cintas</a>
+                        <Link to="/category/cintas" className='nav-link'>Cintas</Link>
                     </li>
                 </ul>
             </div>

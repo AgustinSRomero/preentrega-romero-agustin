@@ -52,20 +52,17 @@ p {
 }
 
 /* transitions logo, nav y subitems */
-header {
-  background-color: #918367;
-}
-header a {
-  transition: 0.3s ease;
-}
-
 nav {
+  background-color: #918367;
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-rows: auto;
-  -moz-column-gap: 3px;
-       column-gap: 3px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
   row-gap: 0px;
+}
+nav a {
+  transition: 0.3s ease;
 }
 
 .brand a, h5 { /* logo and sublogo */
@@ -115,10 +112,175 @@ nav .links-container ul {
   align-items: center;
 }
 
-/* item list container style */
+/* General grid pages*/
+.main-container {
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: auto;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  row-gap: 0px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+/* item list container grid and style */
 .item-list-container {
   color: #596f91;
+  grid-area: products;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 0.8fr);
+  row-gap: 20px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+#ItemListContainer {
+  grid-template-areas: ". products .";
+}
+
+/* Cards Styles */
+.card-item {
+  text-align: center;
+  padding: 30px;
+  border: solid 0.07rem #918367;
+  border-radius: 5%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.431372549);
+  margin: auto;
+  transition: 0.3s;
+}
+.card-item:hover {
+  box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.6941176471);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* item count styles and grid */
+.item-count-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3px 5px;
+  height: 80%;
+}
+.item-count-container button {
+  cursor: pointer;
+}
+
+.count-buttons {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #596f91;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.342);
+  grid-area: counterBtn;
+}
+.count-buttons button {
+  background-color: transparent;
+  color: #596f91;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+}
+.count-buttons button:hover {
+  background-color: #B4C5DE;
+}
+.count-buttons .button-add {
+  border-left: 2px solid #596f91;
+}
+.count-buttons .button-add:disabled {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
+}
+.count-buttons .button-substract {
+  border-right: 2px solid #596f91;
+  padding-left: 6px;
+}
+.count-buttons .button-substract:disabled {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.add-cart-button button, .detail-button {
+  background-color: rgba(145, 131, 103, 0.8235294118);
+  border: 1.5px solid #918367;
+  border-radius: 3px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+  color: #FFF7E8;
+  font-size: 1rem;
+  padding: 5px 6px;
+  margin: 3px;
+  cursor: pointer;
+}
+.add-cart-button button:hover, .detail-button:hover {
+  background-color: #B4C5DE;
+  border-color: #596f91;
+  color: #596f91;
+}
+
+/* Item detail container grid and style */
+.item-detail-card {
+  grid-area: product;
+  width: 60%;
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: auto;
+  justify-items: space-around;
+}
+
+/* imagen */
+.detail-img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* texto */
+.detail-text {
+  color: #596f91;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 1fr);
+  -moz-column-gap: auto;
+       column-gap: auto;
+  row-gap: 1rem;
+  margin: 1rem;
+}
+
+/* botones y contador */
+.add-cart-button {
+  grid-area: add-cart;
+}
+
+#ItemDetail .item-count-container {
+  width: 100%;
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr 0.3fr 1fr 0.5fr 0.3fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  row-gap: 0px;
+  grid-template-areas: ". counterBtn counterBtn . add-cart add-cart .";
+}
+#ItemDetail .item-count-container .count-buttons {
+  width: 100%;
+}
+#ItemDetail .item-count-container .add-cart-button button {
+  padding: 0.7rem;
+}
+
+/* Area general */
+#ItemDetailContainer {
+  grid-template-areas: ". product .";
 }/*# sourceMappingURL=App.css.map */
