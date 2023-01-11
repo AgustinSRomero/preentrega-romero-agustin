@@ -7,7 +7,7 @@ const products = [
     stock: 300,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo1.jpg",
+    img: "../assets/catalogo1.jpg",
     altImg: "bobinas"
   },
   {
@@ -18,7 +18,7 @@ const products = [
     stock: 100,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo2.jpg",
+    img: "../assets/catalogo2.jpg",
     altImg: "cierres reforzados"
   },
   {
@@ -29,7 +29,7 @@ const products = [
     stock: 25,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo3.jpg",
+    img: "../assets/catalogo3.jpg",
     altImg: "bies angosto"
   },
   {
@@ -40,7 +40,7 @@ const products = [
     stock: 10,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo4.jpg",
+    img: "../assets/catalogo4.jpg",
     altImg: "cinta mochila ancha"
   },
   {
@@ -51,7 +51,7 @@ const products = [
     stock: 40,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo5.jpg",
+    img: "../assets/catalogo5.jpg",
     altImg: "hilo encerado"
   },
   {
@@ -62,7 +62,7 @@ const products = [
     stock: 150,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo6.jpg",
+    img: "../assets/catalogo6.jpg",
     altImg: "cierre metal"
   },
   {
@@ -73,7 +73,7 @@ const products = [
     stock: 25,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo7.jpg",
+    img: "../assets/catalogo7.jpg",
     altImg: "agujas plásticas"
   },
   {
@@ -84,7 +84,7 @@ const products = [
     stock: 10,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo8.jpg",
+    img: "../assets/catalogo8.jpg",
     altImg: "pegamento pegamil"
   },
   {
@@ -95,7 +95,7 @@ const products = [
     stock: 50,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo9.jpg",
+    img: "../assets/catalogo9.jpg",
     altImg: "cono de nylon"
   },
   {
@@ -106,7 +106,7 @@ const products = [
     stock: 15,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo10.jpg",
+    img: "../assets/catalogo10.jpg",
     altImg: "cinta de pompones"
   },
   {
@@ -117,7 +117,7 @@ const products = [
     stock: 160,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo11.jpg",
+    img: "../assets/catalogo11.jpg",
     altImg: "conos hilo polyester mh"
   },
   {
@@ -128,7 +128,7 @@ const products = [
     stock: 10,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo12.jpg",
+    img: "../assets/catalogo12.jpg",
     altImg: "puntilla color crudo"
   },
   {
@@ -139,7 +139,7 @@ const products = [
     stock: 40,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo13.jpg",
+    img: "../assets/catalogo13.jpg",
     altImg: "cinta razo con lunares"
   },
   {
@@ -150,7 +150,7 @@ const products = [
     stock: 12,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo14.jpg",
+    img: "../assets/catalogo14.jpg",
     altImg: "rueda de alfileres"
   },
   {
@@ -161,7 +161,7 @@ const products = [
     stock: 30,
     cantidad: 1,
     tipo: "Unidad",
-    img: "./assets/catalogo15.jpg",
+    img: "../assets/catalogo15.jpg",
     altImg: "enhebradores plásticos y chapa"
   },
   {
@@ -172,7 +172,7 @@ const products = [
     stock: 25,
     cantidad: 1,
     tipo: "Metro",
-    img: "./assets/catalogo16.jpg",
+    img: "../assets/catalogo16.jpg",
     altImg: "cinta raso de arcoiris"
   }
 ]
@@ -195,7 +195,7 @@ function getProductsbyCategory(reqCategory) {
       } else {
         reject("No pudimos encontrar productos en la categoria ingresada.");
       }
-    }, 1200);
+    }, 1000);
   });
 }
 
@@ -210,7 +210,7 @@ function getProduct(reqId) {
       } else {
         reject("No se encuentra el producto seleccionado");
       }
-    }, 1200);
+    }, 1000);
   });
 }
 

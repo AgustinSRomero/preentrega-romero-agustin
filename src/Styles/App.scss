@@ -149,6 +149,7 @@ nav .links-container{
         border-left: 2px solid map-get($map: $palette, $key: "letter-dark-blue");
         &:disabled{background-color: rgba(0, 0, 0, 0.08); color: rgba(0, 0, 0, 0.3);}
     }
+
     .button-substract{
         border-right: 2px solid map-get($map: $palette, $key: "letter-dark-blue"); 
         padding-left: 6px;
@@ -186,6 +187,11 @@ nav .links-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    img{
+        width: 350px;
+        height: 350px;
+    }
 }
 /* texto */
 .detail-text{
