@@ -190,7 +190,7 @@ function getProductsbyCategory(reqCategory) {
     const searchedCategory = products.filter((item) => { return (item.categoria === reqCategory.toLowerCase()) })
 
     setTimeout(() => {
-      if (searchedCategory) {
+      if (searchedCategory.length != 0) {
         resolve(searchedCategory);
       } else {
         reject("No pudimos encontrar productos en la categoria ingresada.");
