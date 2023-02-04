@@ -265,3 +265,18 @@ nav .links-container{
     grid-template-areas: ". product .";
 }
 
+/* Cart container */
+.cart-items-container{
+    color: map-get($map: $palette, $key: "letter-dark-blue");
+    grid-area: products;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 0.8fr);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+#Cart-Container{
+    grid-template-areas: ". products .";
+}
+

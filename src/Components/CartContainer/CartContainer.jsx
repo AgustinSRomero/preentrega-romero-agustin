@@ -45,13 +45,15 @@ function CartContainer() {
     } else {
         return (
             <main className='main-container-' id='Cart-Container'>
-                <div>
-                    {cart.map((itemInCart) => {
-                        return (<CartItem product={itemInCart} key={itemInCart.id} removeItem={removeItem}/>)
-                    })}
+                <div className='cart-items-container'>
+                    <div>
+                        {cart.map((itemInCart) => {
+                            return (<CartItem product={itemInCart} key={itemInCart.id} removeItem={removeItem}/>)
+                        })}
+                    </div>
+                    <h4>Total: ${getTotalPriceCart()}</h4>
+                    <Button onClick={clearCart} class="default-button">Limpiar Carrito</Button>
                 </div>
-                <h4>Total: ${getTotalPriceCart()}</h4>
-                <Button onClick={clearCart} class="default-button">Limpiar Carrito</Button>
                 
                 <CheckoutForm onCheckout={handleCheckout}></CheckoutForm>
             </main>
