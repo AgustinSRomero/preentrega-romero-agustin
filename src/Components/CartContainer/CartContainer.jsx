@@ -3,48 +3,37 @@ import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
 import { cartContext } from '../../Storage/cartContext';
 import CartItem from './CartItem';
-import { createOrder } from '../../Services/firebase';
+import CheckoutForm from '../Form/CheckoutForm';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import { createOrder } from '../../Services/firebase';
+
 
 function CartContainer() {
     const {cart, removeItem, getTotalPriceCart, clearCart, getTotalItemsInCart} = useContext(cartContext);
     const emptyCart = getTotalItemsInCart();
 
-    function handleCheckout(evt){
+    function handleCheckout(evt, userData){
+        evt.peventDefault();
         const items = cart.map(({id, price, name, count}) => ({id, price, name, count}))
-
+    
         const order = {
-            buyer:{
-                name: "Agustin",
-                surname: "Romero",
-                email: "rom.agus.tcp@gmail.com",
-                phone: 2204440044,
-                adress: {
-                    street: "Calle falsa",
-                    number: "1234",
-                    province: "Buenos Aires",
-                    locality: "Ituzaingó",
-                    CP: "1719",
-                    obs: "puerta negra",
-                }
-            },
+            buyer: userData,
             items: items,
             total: getTotalPriceCart(),
             date: new Date(),
         }
+    
         createOrder(order).then((id) => {
-            const MySwal = withReactContent(Swal)
-
             Swal.fire({
                 icon: 'success',
-                title: 'Compra realizada',
-                text: `Su orden fue genera, su código es: ${id}`,
+                title: 'Gracias por su compra!',
+                text: `Su orden fue generada con éxito, su código es: ${id}`,
             })
-
+    
             clearCart()
         });
     }
+
 
     if(emptyCart === 0){
         return (
@@ -63,10 +52,11 @@ function CartContainer() {
                 </div>
                 <h4>Total: ${getTotalPriceCart()}</h4>
                 <Button onClick={clearCart} class="default-button">Limpiar Carrito</Button>
-                <Button onClick={handleCheckout} class="default-button">Finalizar Compra</Button>
+                
+                <CheckoutForm onCheckout={handleCheckout}></CheckoutForm>
             </main>
         ) 
     }
 }
 
-export default CartContainer
+export default CartContainer;
