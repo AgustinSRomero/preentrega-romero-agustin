@@ -14,7 +14,7 @@ function ItemCount({ stockCheck, onAddToCart, buttonAdd, countCart}){
 
 
     function emptyStock(){
-        if(stockCheck === 0){return false;}else{return true}
+        if(stockCheck != 0){return false;}else{return true}
     }
 
     function Add(){
@@ -30,20 +30,30 @@ function ItemCount({ stockCheck, onAddToCart, buttonAdd, countCart}){
     }
     
     return (
-        <div className= "item-count-container">
-            <div className="count-buttons">
-                <Button onClick={Subtract} disabled={count === 1} class="button-substract">-</Button>
-                <p>{count}</p>
-                <Button onClick={Add} disabled={count === stockCheck} class="button-add">+</Button>
+        <>
+        {emptyStock()?
+            <div>
+                <h6 style={{color:"#596f91", marginLeft: "16px",}}>Cantidad Máxima en Carrito</h6>
             </div>
-            {buttonAdd && emptyStock()?
-                <div className="add-cart-button">
-                    <Button onClick={() => onAddToCart(count)}>Añadir al Carrito</Button>
+
+            :
+
+            <div className= "item-count-container">
+                <div className="count-buttons">
+                    <Button onClick={Subtract} disabled={count === 1} class="button-substract">-</Button>
+                    <p>{count}</p>
+                    <Button onClick={Add} disabled={count === stockCheck} class="button-add">+</Button>
                 </div>
-                :
-                <></>
-            }
-        </div>
+                {buttonAdd?
+                    <div className="add-cart-button">
+                        <Button onClick={() => onAddToCart(count)}>Añadir al Carrito</Button>
+                    </div>
+                    :
+                    <></>
+                }
+            </div>
+        }
+        </>
     )
 }
 
