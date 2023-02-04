@@ -1,34 +1,50 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getProducts from '../../Services/mockService';
-import { getProductsbyCategory } from '../../Services/mockService';
+import { getProducts, getProductsbyCategory } from '../../Services/firebase';
 import Item from './Item'
+import Loader from '../Loader/Loader';
+
 
 function ItemListContainer(){
     const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [alertText, setAlertText] = useState()
+    
     const categoryParam = useParams().id
 
     useEffect(() => {
+        setIsLoading(true)
+        setAlertText()
+
         if (!categoryParam) {
             getProducts()
                 .then((response) => {setProducts(response)})
-                .catch((error) => {alert(error)}) 
+                .catch((error) => {setAlertText(error)}) 
+                .finally(() => setIsLoading(false))
         } else {
             getProductsbyCategory(categoryParam)
                 .then((response) => {setProducts(response)})
-                .catch((error) => {alert(error)})        
+                .catch((error) => {setAlertText(error)})
+                .finally(() => setIsLoading(false))       
         }
     }, [categoryParam])
     
-    return(
-        <main className='main-container' id='ItemListContainer'>
-            <div className='item-list-container'>
-                {products.map((productIterated) => {
-                    return(<Item id={productIterated.id} key={productIterated.id} product={productIterated}/>)
-                })}
-            </div>
-        </main>
-    )
+
+    if (isLoading) {
+        return <Loader></Loader>
+    } else {
+        return(
+            <main className='main-container' id='ItemListContainer'>
+                {alertText && (alert({alertText}))}
+                <div className='item-list-container'>
+                    {products.map((productIterated) => {
+                        return(<Item key={productIterated.id} product={productIterated}/>)
+                    })}
+                </div>
+            </main>
+        ) 
+    }
+   
 }
 
 export default ItemListContainer;

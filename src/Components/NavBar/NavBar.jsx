@@ -33,7 +33,7 @@ function NavBar (){
             </div>
 
             <div className='icons-position'>
-                <CartWidget/>
+                <Link to="/cart"><CartWidget/></Link>
             </div>
         </nav>
     )

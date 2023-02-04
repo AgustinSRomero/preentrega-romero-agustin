@@ -5,7 +5,6 @@ const products = [
     nombre: "Bobinas",
     precio: 100,
     stock: 300,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo1.jpg",
     altImg: "bobinas"
@@ -16,7 +15,6 @@ const products = [
     nombre: "Cierre reforzado",
     precio: 150,
     stock: 100,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo2.jpg",
     altImg: "cierres reforzados"
@@ -27,7 +25,6 @@ const products = [
     nombre: "Bies angosto",
     precio: 180,
     stock: 25,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo3.jpg",
     altImg: "bies angosto"
@@ -38,7 +35,6 @@ const products = [
     nombre: "Cinta mochila",
     precio: 220,
     stock: 10,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo4.jpg",
     altImg: "cinta mochila ancha"
@@ -49,7 +45,6 @@ const products = [
     nombre: "Hilo encerado",
     precio: 300,
     stock: 40,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo5.jpg",
     altImg: "hilo encerado"
@@ -60,7 +55,6 @@ const products = [
     nombre: "Cierre metal",
     precio: 210,
     stock: 150,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo6.jpg",
     altImg: "cierre metal"
@@ -71,7 +65,6 @@ const products = [
     nombre: "Aguja plástica",
     precio: 25,
     stock: 25,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo7.jpg",
     altImg: "agujas plásticas"
@@ -82,7 +75,6 @@ const products = [
     nombre: "Pegamil",
     precio: 380,
     stock: 10,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo8.jpg",
     altImg: "pegamento pegamil"
@@ -93,7 +85,6 @@ const products = [
     nombre: "Cono de nylon",
     precio: 500,
     stock: 50,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo9.jpg",
     altImg: "cono de nylon"
@@ -104,7 +95,6 @@ const products = [
     nombre: "Pompones",
     precio: 250,
     stock: 15,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo10.jpg",
     altImg: "cinta de pompones"
@@ -115,7 +105,6 @@ const products = [
     nombre: "Cono MH",
     precio: 400,
     stock: 160,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo11.jpg",
     altImg: "conos hilo polyester mh"
@@ -126,7 +115,6 @@ const products = [
     nombre: "Puntilla crudo",
     precio: 320,
     stock: 10,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo12.jpg",
     altImg: "puntilla color crudo"
@@ -137,7 +125,6 @@ const products = [
     nombre: "Cinta raso motivo",
     precio: 110,
     stock: 40,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo13.jpg",
     altImg: "cinta razo con lunares"
@@ -148,7 +135,6 @@ const products = [
     nombre: "Rueda alfileres",
     precio: 160,
     stock: 12,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo14.jpg",
     altImg: "rueda de alfileres"
@@ -159,7 +145,6 @@ const products = [
     nombre: "Enhebradores",
     precio: 15,
     stock: 30,
-    cantidad: 1,
     tipo: "Unidad",
     img: "../assets/catalogo15.jpg",
     altImg: "enhebradores plásticos y chapa"
@@ -170,7 +155,6 @@ const products = [
     nombre: "Cinta raso arcoiris",
     precio: 100,
     stock: 25,
-    cantidad: 1,
     tipo: "Metro",
     img: "../assets/catalogo16.jpg",
     altImg: "cinta raso de arcoiris"
@@ -181,7 +165,7 @@ function getProducts() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
-    }, 1000);
+    }, 1200);
   });
 }
 
@@ -190,7 +174,7 @@ function getProductsbyCategory(reqCategory) {
     const searchedCategory = products.filter((item) => { return (item.categoria === reqCategory.toLowerCase()) })
 
     setTimeout(() => {
-      if (searchedCategory.length != 0) {
+      if (searchedCategory.length !== 0) {
         resolve(searchedCategory);
       } else {
         reject("No pudimos encontrar productos en la categoria ingresada.");
