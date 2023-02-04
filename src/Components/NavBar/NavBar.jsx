@@ -29,6 +29,12 @@ function NavBar (){
                     <li>
                         <Link to="/category/cintas" className='nav-link'>Cintas</Link>
                     </li>
+                    <li>
+                        <Link to="/category/alfileres" className='nav-link'>Alfileres</Link>
+                    </li>
+                    <li>
+                        <Link to="/category/manualidades" className='nav-link'>Manualidades</Link>
+                    </li>
                 </ul>
             </div>
 
