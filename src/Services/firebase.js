@@ -30,13 +30,20 @@ export async function getProductsbyCategory(reqCategory){
     const snapshot = await getDocs(q);
 
     const products = snapshot.docs.map((elem) => ({...elem.data(), id: elem.id}))
+    
     return products;
 }
+
 
 export async function getProduct(reqId){
     const docRef = doc(productsRef, reqId);
     const snapshot = await getDoc(docRef);
-    return {...snapshot.data(), id: snapshot.id};
+
+    if (!snapshot.data()) {
+        throw new Error('Producto no encontrado');
+    } else {
+        return {...snapshot.data(), id: snapshot.id};
+    }
 }
 
 export async function createOrder(order){

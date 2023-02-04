@@ -22,26 +22,34 @@ function CheckoutForm(props) {
     setUserData(newState);
   }
 
-  function handleSubmit(evt){
-    evt.preventDefault();
+  function clearForm(){
+    const newState = {...userData}
+    let fieldsData = Object.keys(newState)
+
+    fieldsData.map((field) => (
+      newState[field] = ""
+    ))
+
+    setUserData(newState)
   }
 
+  function handleSubmit(evt){
+    evt.preventDefault();
+    props.onCheckout(userData)
+  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit} className={props.class}>
       <h3>Complete los siguientes datos para finalizar su compra:</h3>
       {
         fieldsForm.map((field) => (
           <InputForm value={userData[field]} name={field} key={field} onChange={onInputChange} label={field}></InputForm>
         ))
       }
-      {/* <Button type="submit" class="default-button" onClick={handleSubmit}>Finalizar Compra</Button> */}
-      <button
-        onClick={(evt) => props.onCheckout(evt, userData)}
-        type="submit"
-      >
-        Crear orden
-      </button>
+      <div className='button-form-container'>
+        <Button type="clear" class="default-button" onClick={clearForm}>Limpiar Formulario</Button>
+        <Button type="submit" class="finish-button">Finalizar Compra</Button>
+      </div>
     </form>
   )
 }

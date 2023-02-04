@@ -12,8 +12,7 @@ function CartContainer() {
     const {cart, removeItem, getTotalPriceCart, clearCart, getTotalItemsInCart} = useContext(cartContext);
     const emptyCart = getTotalItemsInCart();
 
-    function handleCheckout(evt, userData){
-        evt.peventDefault();
+    function handleCheckout(userData){
         const items = cart.map(({id, price, name, count}) => ({id, price, name, count}))
     
         const order = {
@@ -44,18 +43,19 @@ function CartContainer() {
         )
     } else {
         return (
-            <main className='main-container-' id='Cart-Container'>
+            <main className='main-container' id='Cart-Container'>
                 <div className='cart-items-container'>
-                    <div>
-                        {cart.map((itemInCart) => {
-                            return (<CartItem product={itemInCart} key={itemInCart.id} removeItem={removeItem}/>)
-                        })}
+                    {cart.map((itemInCart) => {
+                        return (<CartItem product={itemInCart} key={itemInCart.id} removeItem={removeItem}/>)
+                    })}
+                
+                    <div className='cart-info-container'>
+                        <h4 className='total-price-cart'>Total: ${getTotalPriceCart()}</h4>
+                        <Button onClick={clearCart} class="clear-cart">Vaciar Carrito</Button>
                     </div>
-                    <h4>Total: ${getTotalPriceCart()}</h4>
-                    <Button onClick={clearCart} class="default-button">Limpiar Carrito</Button>
                 </div>
                 
-                <CheckoutForm onCheckout={handleCheckout}></CheckoutForm>
+                <CheckoutForm onCheckout={handleCheckout} class="checkout-container"></CheckoutForm>
             </main>
         ) 
     }

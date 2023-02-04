@@ -1,11 +1,21 @@
-# Getting Started with Create React App
+# Elisa Merceria E-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto creado para el curso de React.js de Coderhouse. 
 
-## Available Scripts
+Diseño de la tienda de una mercería, con algunos de sus productos y posibilidades de filtrar por categorías.
+Detalle de estos, carrito de compras y formulario requerido para realizar el pedido. Conectado a firebase, por el cual, mediante firestore, se obtienen los productos y se guardan las ordenes de compra.
 
-In the project directory, you can run:
+La paleta de colores usada esta inspirada en el local comercial, tomando los colores de la madera, las vitrinas y el antiguo logo. Generando asi una página familiar y amistosa con sus clientes.
 
+
+[![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Nhtli5aSkLo8igB8oRJM49A8XBx8f15gENCCcuvf80kuqyUOrZ8giQgy4GZ7Ix_sb6c&usqp=CAU)](https://nodesource.com/products/nsolid)
+
+
+# Como clonar
+
+- git clone ....
+- npm install
+- Then:
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -14,57 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Pequeña historia
 
-### `npm run build`
+Elisa mercería, antiguamente llamada "Mis Nietos", fue un local comercial ubicado en la localidad de San Antonio de Padua, Argentina.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Desde su fundacion por Doña Elisa, nombrandola en cariño a sus nietos, brindo servicio a la comunidad por más de 50 años, llegando a ser atendido hasta por la 4ta generacion familiar.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Actualmente, renombrada en honor a su fundadora, se encuentra en una transformacion, empezando a vender mediante redes y con la creación de su futura página web.

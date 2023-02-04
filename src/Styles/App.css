@@ -64,7 +64,7 @@ span {
 }
 
 /* Estilo default boton */
-.default-button, .add-cart-button button, .see-detail-button, .go-to-cart-btn {
+.default-button, .checkout-container .finish-button, .clear-cart, .add-cart-button button, .see-detail-button, .go-to-cart-btn {
   background-color: rgba(145, 131, 103, 0.8235294118);
   border: 1.5px solid #918367;
   border-radius: 3px;
@@ -75,7 +75,7 @@ span {
   margin: 10px 3px 3px;
   cursor: pointer;
 }
-.default-button:hover, .add-cart-button button:hover, .see-detail-button:hover, .go-to-cart-btn:hover {
+.default-button:hover, .checkout-container .finish-button:hover, .clear-cart:hover, .add-cart-button button:hover, .see-detail-button:hover, .go-to-cart-btn:hover {
   background-color: #B4C5DE;
   border-color: #596f91;
   color: #596f91;
@@ -335,7 +335,140 @@ nav .links-container ul {
   color: #596f91;
 }
 
-/* Area general */
+/* General Area */
 #ItemDetailContainer {
   grid-template-areas: ". product .";
+}
+
+/* Cart container */
+/* Total & clean cart */
+.clear-cart {
+  grid-area: clear-button;
+}
+
+.total-price-cart {
+  grid-area: total-price;
+  background-color: #d9d3c6;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.342);
+}
+
+.cart-info-container {
+  width: 60vw;
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr 0.6fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  row-gap: 0px;
+  grid-template-areas: ". . total-price clear-button";
+  justify-items: center;
+  align-items: center;
+  padding: 1em;
+}
+
+/* grupal item container */
+.cart-items-container {
+  grid-area: products;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto, 0.8fr);
+  row-gap: 2em;
+  justify-items: center;
+  margin: 1em 0em;
+}
+
+/* individual item container */
+.cart-img {
+  grid-area: itemImg;
+  justify-self: center;
+}
+
+.cart-text-container {
+  grid-area: itemText;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.cart-subtotal {
+  grid-area: itemSubtotal;
+}
+
+.eliminate-button {
+  grid-area: eliminateButton;
+  justify-self: center;
+  color: rgba(82, 11, 11, 0.86);
+  background-color: rgba(220, 19, 19, 0.601);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.342);
+  border-radius: 50%;
+  padding: 2px 8px;
+  transition: 0.3s;
+}
+.eliminate-button:hover {
+  color: rgb(71, 9, 9);
+  background-color: rgba(220, 19, 19, 0.833);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.item-cart-container {
+  width: 60vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 0.2fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  row-gap: 0px;
+  grid-template-areas: "itemImg itemText itemSubtotal eliminateButton";
+  align-items: center;
+  background-color: #d9d3c6;
+  border: solid 0.07rem #918367;
+  padding: 20px 30px;
+  border-radius: 3%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.431372549);
+}
+
+/* form container */
+.checkout-container {
+  grid-area: form;
+  width: 60vw;
+  display: grid;
+  row-gap: 10px;
+  justify-items: center;
+  padding: 2em;
+  margin: 1em 0em;
+}
+.checkout-container .finish-button {
+  font-size: 1, 2em;
+}
+.checkout-container button {
+  margin-top: 1.5em;
+  font-size: 0.8em;
+}
+
+.input-container {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+}
+.input-container input {
+  width: 25vw;
+  background-color: #fbf9f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.button-form-container {
+  width: 30vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* CART GRID */
+#Cart-Container {
+  grid-template-areas: ". products ." ". form .";
+  color: #596f91;
 }/*# sourceMappingURL=App.css.map */

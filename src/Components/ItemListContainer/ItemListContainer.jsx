@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getProducts, getProductsbyCategory } from '../../Services/firebase';
 import Item from './Item'
 import Loader from '../Loader/Loader';
@@ -29,19 +29,32 @@ function ItemListContainer(){
         }
     }, [categoryParam])
     
+    const productCheck = products.length
+    console.log(productCheck)
 
     if (isLoading) {
         return <Loader></Loader>
     } else {
         return(
-            <main className='main-container' id='ItemListContainer'>
-                {alertText && (alert({alertText}))}
-                <div className='item-list-container'>
-                    {products.map((productIterated) => {
-                        return(<Item key={productIterated.id} product={productIterated}/>)
-                    })}
+            <>
+            {productCheck === 0?
+                <div style={{color:"#596f91", display:"flex", flexDirection:"column", flexWrap:"wrap", alignItems:"center"}}>
+                    <h3 style={{marginTop:"60px"}}>No se encuentran productos</h3>
+                    <Link to={"/"} style={{color:"#596f91", textDecoration:"underline"}}>Volver al inicio</Link>
                 </div>
-            </main>
+
+                :
+                
+                <main className='main-container' id='ItemListContainer'>
+                    {alertText && (alert({alertText}))}
+                    <div className='item-list-container'>
+                       {products.map((productIterated) => {
+                           return(<Item key={productIterated.id} product={productIterated}/>)
+                        })}
+                    </div>
+                </main>
+            }
+            </>
         ) 
     }
    

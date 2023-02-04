@@ -6,8 +6,7 @@ function InputForm(props) {
     return (
         <div className='input-container'>
             <label>
-                {label}*:
-                <input type="text" name={name} onChange={onChange} value={value} required/>
+                {label}: * <input type="text" name={name} onChange={onChange} value={value} required/>
             </label>
         </div>
     )
